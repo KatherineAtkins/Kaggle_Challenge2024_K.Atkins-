@@ -53,6 +53,8 @@ The challenge is to predict if a patient is diagnosed with Metastatic TNBC withi
  - Decision Tree
 	- random_state=42
 
+-  #### Training was the most difficult (and discouraging) aspect of this project as models would work well on one run, but not another after resetting the kernels, resulting in the loss of progress. My models seemed resistent to manual hypertuning as they would not change results when significantly tuned.
+
 ## Results and Conclusion
 ![python2table](https://github.com/user-attachments/assets/c1641230-e9bf-4615-8a97-890519f79eab)
 
@@ -69,9 +71,43 @@ Moving forward, I plan to reassess the preprocessing stage as I aim to incorpora
 
 
 # How to Reproduce Results
-1. Download the train.csv and test.csv from the kaggle challenge: (https://www.kaggle.com/competitions/widsdatathon2024-challenge1/overview)
+1. Download the train.csv and test.csv from the Kaggle Challenge "WiDS Datathon 2024 Challenge #1": (https://www.kaggle.com/competitions/widsdatathon2024-challenge1/overview)
+	- Train and test datasets need to be downloaded seperately
 2. Load the CSV files and run the Data Understanding notebook followed by the Preprocessing notebook in order to obtain the train_preprocessed.csv and test_prepocessed.csv.
 3. Load the preprocessed CSV files and run the ML_Testing notebook to train the model and review the results.
+
+
+## Overview of files in repository
+- DataUnderstanding.ipynb: This notebook will walk you through how to initially look at the data including statistics and visualizations.
+- Preprocessing.ipynb: This notebook focuses on preprocessing both the training and test datasets with a primary focus on the training data exploration. This notebook includes feature selection, encoding, and feature engineering.
+- TrainingML_Visualizations: This notebook focuses only on the training dataset and visualizes the the Random Forest and Decicion Tree models. *You do NOT need to follow this notebook to reproduce results, it is purley for entertainment only*
+- ML_Testing.ipynb: This notebook contains the model training and testing of Random Forest, Decision Tree, and Logistic Regression as well as ROC curves for each model.
+
+Software Setup
+- I accessed all software through libraries
+
+- Data Understanding and Preprocessing
+	import numpy as np
+	import pandas as pd
+	import matplotlib.pyplot as plt
+	import seaborn as sns
+	import re
+- Machine Learning
+	from sklearn.model_selection import train_test_split
+	from sklearn.ensemble import RandomForestClassifier
+	from sklearn.tree import DecisionTreeClassifier
+	from sklearn.ensemble import GradientBoostingClassifier
+	from sklearn.model_selection import GridSearchCV
+	from sklearn.metrics import roc_curve, auc
+	from sklearn.metrics import mean_squared_error, r2_score
+	from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+	from sklearn.tree import DecisionTreeClassifier, plot_tree
+	from sklearn.compose import ColumnTransformer
+	from sklearn.pipeline import Pipeline
+	from sklearn.preprocessing import OneHotEncoder, StandardScaler
+	from sklearn.metrics import classification_report
+
+
 
 
 #### If you have any feedback or suggestions for improvement, please feel free to contact me at kja7375@mavs.uta.edu
