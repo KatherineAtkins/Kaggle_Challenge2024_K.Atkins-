@@ -35,7 +35,7 @@ The challenge is to predict if a patient is diagnosed with Metastatic TNBC withi
 - Encode Categorical Features (One-Hot Encoding)
 	- 'payer_type','patient_state', 'location_category'
 - Additional drop of unnecessary columns: ('mean_bmi','breast_cancer_diagnosis_desc','age_group','age_under_10','age_10_to_19','age_20s','age_30s','age_30s','age_40s','age_50s','age_60s','age_70s','age_over_80','patient_age','patient_race','patient_gender','breast_cancer_diagnosis_code','breast_cancer_diagnosis_code', 'metastatic_cancer_diagnosis_code','metastatic_first_novel_treatment','metastatic_first_novel_treatment_type','Region','Division','labor_force_participation','unemployment_rate','self_employed','farmer','payer_type_MEDICAID','payer_type_MEDICARE ADVANTAGE','payer_type_Prefer Not to Answer','family_size')
-	- ###### The dataset had already been encoded for quite a few features, but I didn't like the grouping of some of them, so I redid them and deleted the original ones. Additional elimination was done after doing a correlation matrix assessment and assessing the necessity of most features by what I deemed more relevant to the demographic of the patients.
+	- #### The dataset had already been encoded for quite a few features, but I didn't like the grouping of some of them, so I redid them and deleted the original ones. Additional elimination was done after doing a correlation matrix assessment and assessing the necessity of most features by what I deemed more relevant to the demographic of the patients.
   
 ## Training
 - Train: 90% of train.csv
