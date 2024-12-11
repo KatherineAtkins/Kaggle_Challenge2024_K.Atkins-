@@ -37,9 +37,28 @@ The challenge is to predict if a patient is diagnosed with Metastatic TNBC withi
 - Additional drop of unnecessary columns: ('mean_bmi','breast_cancer_diagnosis_desc','age_group','age_under_10','age_10_to_19','age_20s','age_30s','age_30s','age_40s','age_50s','age_60s','age_70s','age_over_80','patient_age','patient_race','patient_gender','breast_cancer_diagnosis_code','breast_cancer_diagnosis_code', 'metastatic_cancer_diagnosis_code','metastatic_first_novel_treatment','metastatic_first_novel_treatment_type','Region','Division','labor_force_participation','unemployment_rate','self_employed','farmer','payer_type_MEDICAID','payer_type_MEDICARE ADVANTAGE','payer_type_Prefer Not to Answer','family_size')
   
 ## Training
+- Train: 1111 rows (90% of train.csv)
+- Validation: 124 rows (10% of train.csv)
+- Test: 824 rows (100% of test.csv)
+- Random Forest (Hyperparameter Tuning via GridSearchCV)
+	- n_estimators=100
+	- max_depth=5,
+	- random_state=42
+- Decision Tree (Hyperparameter Tuning via GridSearchCV)  
+	- criterion= entropy
+	- max_depth=5
+	- min_samples_leaf= 1
+	- min_samples_split= 5
 
 ## Results
 
 ## Future Work
+Moving forward, I plan on incorporating other models such as the Naive Bayes model, decision tree, and random forest. I was not successful with these models during this tiral period, but with the linear regression model as a benchmark, 
+
 
 # How to Reproduce Results
+1. Download the train.csv and test.csv from the kaggle challenge: (https://www.kaggle.com/competitions/widsdatathon2024-challenge1/overview)
+2. Load the CSV files and run the Data Understanding notebook followed by the Preprocessing notebook in order to obtain the train_preprocessed.csv and test_prepocessed.csv.
+3. Load the preprocessed CSV files and run the ML_Testing notebook to train the model and review the results.
+
+4. If you have any feedback or suggestions for improvement, please feel free to contact me at kja7375@mavs.uta.edu
