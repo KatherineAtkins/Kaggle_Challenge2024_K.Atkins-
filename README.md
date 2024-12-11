@@ -35,25 +35,37 @@ The challenge is to predict if a patient is diagnosed with Metastatic TNBC withi
 - Encode Categorical Features (One-Hot Encoding)
 	- 'payer_type','patient_state', 'location_category'
 - Additional drop of unnecessary columns: ('mean_bmi','breast_cancer_diagnosis_desc','age_group','age_under_10','age_10_to_19','age_20s','age_30s','age_30s','age_40s','age_50s','age_60s','age_70s','age_over_80','patient_age','patient_race','patient_gender','breast_cancer_diagnosis_code','breast_cancer_diagnosis_code', 'metastatic_cancer_diagnosis_code','metastatic_first_novel_treatment','metastatic_first_novel_treatment_type','Region','Division','labor_force_participation','unemployment_rate','self_employed','farmer','payer_type_MEDICAID','payer_type_MEDICARE ADVANTAGE','payer_type_Prefer Not to Answer','family_size')
+	- ###### The dataset had already been encoded for quite a few features, but I didn't like the grouping of some of them, so I redid them and deleted the original ones. Additional elimination was done after doing a correlation matrix assessment and assessing the necessity of most features by what I deemed more relevant to the demographic of the patients.
   
 ## Training
-- Train: 1111 rows (90% of train.csv)
-- Validation: 124 rows (10% of train.csv)
-- Test: 824 rows (100% of test.csv)
-- Random Forest (Hyperparameter Tuning via GridSearchCV)
+- Train: 90% of train.csv
+- Validation: 10% of train.csv
+- Test: 100% of test.csv
+	- Output is predictions
+- Random Forest
 	- n_estimators=100
 	- max_depth=5,
 	- random_state=42
-- Decision Tree (Hyperparameter Tuning via GridSearchCV)  
+- Decision Tree 
 	- criterion= entropy
 	- max_depth=5
-	- min_samples_leaf= 1
-	- min_samples_split= 5
+	- random_state=42
+ - Decision Tree
+	- random_state=42
 
-## Results
+## Results and Conclusion
+![python2table](https://github.com/user-attachments/assets/c1641230-e9bf-4615-8a97-890519f79eab)
+
+The results are very mid-field and have similar ROC curves to random (50/50) selection as shown below.
+
+![ROCrandomforest](https://github.com/user-attachments/assets/52a6d95d-bef8-4350-a5f6-a8107375c8c1)
+![ROCdecisiontree](https://github.com/user-attachments/assets/d2410bdb-a929-40e1-af22-fb493c18002b)
+![ROClogreg](https://github.com/user-attachments/assets/2467dcb7-a372-4822-904f-b4edf79b92c6)
+
+The best score for this Kaggle Challenge is an accuracy of 0.802, making my scores pale in comparison. The models shown in this project were insignificant in correctly identifying patients who are likely to develop Metastatic TNBC based on demographics. This is likely due to my choice in handling the data during preprocessing and feature engineering. 
 
 ## Future Work
-Moving forward, I plan on incorporating other models such as the Naive Bayes model, decision tree, and random forest. I was not successful with these models during this tiral period, but with the linear regression model as a benchmark, 
+Moving forward, I plan to reassess the preprocessing stage as I aim to incorporate other models such as the Naive Bayes model and Gradient Boosting in addition to solidifying benchmark results most likely with a linear regression model. I unfortunately was not successful with these models during this tiral period... :(  Additionally, I plan to tune the modles with hyperparameters via GridSearchCV and cross validate the Random Forest, Decision Tree, and Logistic Regression models already used in this project.
 
 
 # How to Reproduce Results
@@ -61,4 +73,5 @@ Moving forward, I plan on incorporating other models such as the Naive Bayes mod
 2. Load the CSV files and run the Data Understanding notebook followed by the Preprocessing notebook in order to obtain the train_preprocessed.csv and test_prepocessed.csv.
 3. Load the preprocessed CSV files and run the ML_Testing notebook to train the model and review the results.
 
-4. If you have any feedback or suggestions for improvement, please feel free to contact me at kja7375@mavs.uta.edu
+
+#### If you have any feedback or suggestions for improvement, please feel free to contact me at kja7375@mavs.uta.edu
