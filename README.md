@@ -78,7 +78,7 @@ Moving forward, I plan to reassess the preprocessing stage as I aim to incorpora
 
 ## Overview of files in repository
 - DataUnderstanding.ipynb: This notebook will walk you through how to initially look at the data including statistics and visualizations.
-- Preprocessing.ipynb: This notebook focuses on preprocessing both the training and test datasets with a primary focus on the training data exploration. This notebook includes feature selection, encoding, and feature engineering.
+- Preprocessing-2.ipynb: This notebook focuses on preprocessing both the training and test datasets with a primary focus on the training data exploration. This notebook includes feature selection, encoding, and feature engineering.
 - TrainingML_Visualizations: This notebook focuses only on the training dataset and visualizes the the Random Forest and Decicion Tree models. *You do NOT need to follow this notebook to reproduce results, it is purley for entertainment only*
 - ML_Testing.ipynb: This notebook contains the model training and testing of Random Forest, Decision Tree, and Logistic Regression as well as ROC curves for each model.
 
