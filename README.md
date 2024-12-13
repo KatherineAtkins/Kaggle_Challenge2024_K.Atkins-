@@ -2,7 +2,7 @@
 - This repository houses an attempt to apply three types of supervised machine learning models to the "WiDS Datathon 2024 Challenge #1" Kaggle challenge; Metastatic TNBC dataset.
 
 ## Overview
-The challenge is to predict if a patient is diagnosed with Metastatic TNBC within a 90 day diagnostic period based on their demographics. The dataset is composed of patient information from medical records, insurance records, and environmental health I will aproach this using toxicology data from NASA/Columbia University based on patient zip-codes. To determine the correlation, between demographic and diagnostic period, classification models (Random Forest, Decision Tree, and Gradient Boosting) were used while accuracy, precision, recall, and F-1 scores were calculated to assess the model's performance.
+The challenge is to predict if a patient is diagnosed with Metastatic TNBC within a 90 day diagnostic period based on their demographics. The dataset is composed of patient information from medical records, insurance records, and environmental health I will aproach this using toxicology data from NASA/Columbia University based on patient zip-codes. To determine the correlation, between demographic and diagnostic period, classification models (Random Forest, Decision Tree, and Logistic Regression) were used while accuracy, precision, recall, and F-1 scores were calculated to assess the model's performance. The highest predicted accuracy score from these models was 0.601 via Random Forest Model while the highest accuracy score from the Kaggle Challenge is 0.802 via CatBoost and XGBoost. More information about the performance of these models can be found below.
 
 
 ## Summary of Work Done
@@ -15,7 +15,6 @@ The challenge is to predict if a patient is diagnosed with Metastatic TNBC withi
 		- Omits the target column ('DiagPeriodL90D')
   - The target column 'DiagPeriodL90D' is the indicator for Metastatic TNBC in this dataset with 1 meaning the patient received a metastatic cancer diagnosis within 90 days of screening and 0 meaning the patient did not receive a diagnosis.
     
- ![data_visual](https://github.com/user-attachments/assets/61279ef4-def3-454b-a61c-224f04739b9c)
 ![stack_visual](https://github.com/user-attachments/assets/aa8d4388-5202-4cb6-b5b8-3b710204657d)
 ![diagnosisbystate](https://github.com/user-attachments/assets/294499c8-cfcb-4aea-a27c-04fe8b15fd3f)
 ![ozonebystate](https://github.com/user-attachments/assets/921c7340-d64e-457d-8dc2-4deee2c6f9da)
